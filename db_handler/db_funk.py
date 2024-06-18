@@ -34,7 +34,7 @@ async def get_all_users(table_name='users_reg', count=False):
 async def insert_user(user_data: dict, table_name='users_reg'):
     async with db_manager as client:
         await client.insert_data(table_name=table_name, records_data=user_data)
-        if user_data.get('user_refer'):
+        if user_data.get('refer_id'):
             refer_info = await client.select_data(table_name=table_name,
                                                   where_dict={'user_id': user_data.get('refer_id')},
                                                   one_dict=True, columns=['user_id', 'count_refer'])
