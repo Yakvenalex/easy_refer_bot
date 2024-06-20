@@ -20,17 +20,18 @@ async def create_table_users(table_name='users_reg'):
 # функция, для получения информации по конкретному пользователю
 async def get_user_data(user_id: int, table_name='users_reg'):
     async with db_manager as client:
-        return await client.select_data(table_name=table_name, where_dict={'user_id': user_id}, one_dict=True)
+        user_data = await client.select_data(table_name=table_name, where_dict={'user_id': user_id}, one_dict=True)
+    return user_data
 
 
 # функция, для получения всех пользователей (для админки)
 async def get_all_users(table_name='users_reg', count=False):
     async with db_manager as client:
         all_users = await client.select_data(table_name=table_name)
-        if count:
-            return len(all_users)
-        else:
-            return all_users
+    if count:
+        return len(all_users)
+    else:
+        return all_users
 
 
 # функция, для добавления пользователя в базу данных
