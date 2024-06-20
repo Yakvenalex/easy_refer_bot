@@ -5,7 +5,7 @@ from aiogram.types import Message
 from create_bot import bot
 from db_handler.db_funk import get_user_data, insert_user
 from keyboards.kbs import main_kb, home_page_kb
-from utils.utils import get_refer_id
+from utils.utils import get_refer_id, get_now_time
 from aiogram.utils.chat_action import ChatActionSender
 
 user_router = Router()
@@ -28,7 +28,8 @@ async def cmd_start(message: Message, command: CommandObject):
             'user_id': message.from_user.id,
             'full_name': message.from_user.full_name,
             'user_login': message.from_user.username,
-            'refer_id': refer_id
+            'refer_id': refer_id,
+            'date_reg': get_now_time()
         })
         if refer_id:
             response_text = (f'{message.from_user.full_name}, вы зарегистрированы в боте и закреплены за '

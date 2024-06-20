@@ -18,9 +18,10 @@ pip install -r requirements.txt
 где requirements.txt содержит следующие зависимости:
 
 ``` requirements
-asyncpg-lite~=0.22.2.1
+asyncpg-lite~=0.3.1
 aiogram~=3.7.0
 python-decouple~=3.8
+pytz
 ```
 
 ## Использование

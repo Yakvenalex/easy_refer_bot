@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 # инициируем объект, который будет отвечать за взаимодействие с базой данных
-db_manager = DatabaseManager(dsn=config('PG_LINK'), deletion_password=config('ROOT_PASS'))
+db_manager = DatabaseManager(db_url=config('PG_LINK'), deletion_password=config('ROOT_PASS'))
 
 # инициируем объект бота, передавая ему parse_mode=ParseMode.HTML по умолчанию
 bot = Bot(token=config('TOKEN'), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
