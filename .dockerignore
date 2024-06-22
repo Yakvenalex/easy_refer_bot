@@ -9,5 +9,5 @@ __pycache__/
 **/.idea/
 Dockerfile
 
-run_docker.bat
-run_docker.sh
+run_bot.py
+Makefile
