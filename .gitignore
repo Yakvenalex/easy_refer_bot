@@ -15,3 +15,6 @@ __pycache__/
 **/.idea/
 
 run_docker.sh
+run_docker.bat
+
+.dockerignore

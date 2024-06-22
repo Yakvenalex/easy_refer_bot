@@ -1,0 +1,13 @@
+.env
+.gitignore
+.git
+venv/
+.venv/
+__pycache__/
+**/__pycache__/
+.idea/
+**/.idea/
+Dockerfile
+
+run_docker.bat
+run_docker.sh
