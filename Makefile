@@ -1,5 +1,5 @@
 run:
-	docker run -it -d --env-file .env --restart=unless-stopped --name easy_refer easy_refer_bot
+	docker run -it -d -v --env-file .env --restart=unless-stopped --name easy_refer bot:volumes
 stop:
 	docker stop easy_refer
 attach:
