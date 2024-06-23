@@ -11,7 +11,7 @@ async def create_table_users(table_name='users_reg'):
             {"name": "full_name", "type": String},
             {"name": "user_login", "type": String},
             {"name": "refer_id", "type": BigInteger},
-            {"name": "count_refer", "type": Integer, "options": {"default": 0, "server_default": '0'}},
+            {"name": "count_refer", "type": Integer, "options": {"default": 0, "server_default": 0}},
             {"name": "date_reg", "type": TIMESTAMP},
         ]
         await client.create_table(table_name=table_name, columns=columns)
